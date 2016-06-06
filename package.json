@@ -1,0 +1,26 @@
+{
+  "name": "angular-vf-seed",
+  "version": "0.0.1",
+  "description": "Seed project which integrate Angularjs with Visualforce page.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harryheart/angular-vf-seed.git"
+  },
+  "keywords": [
+    "AngularJS",
+    "Visualforce"
+  ],
+  "author": "Harry Zhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harryheart/angular-vf-seed/issues"
+  },
+  "homepage": "https://github.com/harryheart/angular-vf-seed#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
