@@ -7,20 +7,20 @@ app.config( [
     $stateProvider
     .state( 'home', {
       url: '/home',
-      templateUrl: 'templates/home.html',
+      templateUrl: config.templateBase + 'templates/home.html',
       controller: 'HomeCtrl'
     } )
-    .state( 'list', {
+    .state( 'home.list', {
       url: '/list',
-      templateUrl: 'templates/list.html',
+      templateUrl: config.templateBase + 'templates/list.html',
       controller: 'ListCtrl'
     } )
-    .state( 'details', {
+    .state( 'home.details', {
       url: '/details?id',
-      templateUrl: 'templates/details.html',
+      templateUrl: config.templateBase + 'templates/details.html',
       controller: 'DetailsCtrl'
     } );
-    
-    $urlRouterProvider.otherwise( '/home' );
+
+    $urlRouterProvider.otherwise( '/home/list' );
   }
 ] );

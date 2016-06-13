@@ -5,3 +5,12 @@ var app = app || angular.module( 'app', [
   'ui.router',
   'ngTouch'
 ] );
+
+config = config || {
+  templateBase: '',
+  baseURL: ''
+};
+
+app.value('appConfig', config );
+
+console.log(config);

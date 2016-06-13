@@ -1,3 +1,14 @@
-<div class="">
-  Home
+<div class="slds-grid slds-grid--pull-padded slds-m-around--medium">
+  <div class="slds-tabs--scoped">
+    <ul class="slds-tabs--scoped__nav" role="tablist">
+      <li class="slds-tabs--scoped__item slds-text-heading--label slds-active" title="Item One" role="presentation">
+        <a class="slds-tabs--scoped__link" ui-sref="home.list" role="tab" aria-selected="true" >
+          Home
+        </a>
+      </li>
+    </ul>
+    <div id="tab-home" class="slds-tabs--scoped__content slds-show" role="tabpanel" aria-labelledby="tab-scoped-home">
+      <ui-view></ui-view>
+    </div>
+  </div>
 </div>

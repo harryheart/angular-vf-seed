@@ -4,22 +4,23 @@ app.factory( 'DataService', [
   '$q', '$http',
   function ( $q, $http ) {
 
-  var getByCategory = function ( category ) {
+  var getAccounts = function ( ) {
     var deferred = $q.defer();
-    $http.get( 'data/my-plate.json' ).then( function ( res ) {
-      deferred.resolve( res.data[ category ] );
+    $http.get( 'data/accounts.json' ).then( function ( res ) {
+      console.log(res);
+      deferred.resolve( res.data.records );
     } );
 
     return deferred.promise;
   };
 
-  var getItem = function ( category, id ) {
+  var getAccount = function ( id ) {
     var deferred = $q.defer();
-    $http.get( 'data/my-plate.json' ).then( function ( res ) {
-      var items = res.data[ category ];
-      for ( var i = 0; i < items.length; i++ ) {
-        if ( items[ i ].id === id ) {
-          deferred.resolve( items[ i ] );
+    $http.get( 'data/accounts.json' ).then( function ( res ) {
+      var accounts = res.data.records;
+      for ( account of accounts ) {
+        if ( account.id === id ) {
+          deferred.resolve( account );
           break;
         }
       }
@@ -29,7 +30,7 @@ app.factory( 'DataService', [
   };
 
   return {
-    getByCategory: getByCategory,
-    getItem: getItem
+    getAccounts: getAccounts,
+    getAccount: getAccount
   };
 } ] );

@@ -25,6 +25,7 @@
     "angular-ui-router": "^0.3.1",
     "angular-animate": "1.5.6",
     "angular-touch": "1.5.6",
-    "jquery": "2.2.4"
+    "jquery": "2.2.4",
+    "salesforce-lightning-design-system": "^2.0.1"
   }
 }

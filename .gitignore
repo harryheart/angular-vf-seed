@@ -1,5 +1,8 @@
 bower_components/
 node_modules/
 .temp/
+retrieveUnpackaged/
 .jshintrc
 build.properties
+Archive.zip
+resources/

@@ -46,6 +46,15 @@
       <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" zipFile="${sf.zipFile}" pollWaitMillis="1000" rollbackOnError="true"/>
     </target>
 
+    <target name="deploy">
+      <delete file="resources/staticresources/ngvf.resource"/>
+      <zip zipfile="resources/staticresources/ngvf.resource"
+        basedir=".temp/"
+        excludes="index.html,data/"/>
+      <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="resources" pollWaitMillis="1000" rollbackOnError="true"/>
+    </target>
+
+
     <!-- Shows deploying code & running tests for code in directory -->
     <target name="deployCode">
       <!-- Upload the contents of the "codepkg" directory, running the tests for just 1 class -->

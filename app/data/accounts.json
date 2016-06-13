@@ -1,0 +1,12 @@
+{
+  "records": [ {
+      "Id": "1",
+      "Name": "SFDC"
+    }, {
+      "Id": "2",
+      "Name": "Acme inc."
+    }, {
+      "Id": "3",
+      "Name": "Meginfo inc."
+  } ]
+}

@@ -2,7 +2,9 @@
 
 app.controller( 'ListCtrl', [
   '$scope',
-  '$stateParams',
-  function ( $scope, $stateParams ) {
-    
+  'DataService',
+  function ( $scope, DataService ) {
+    DataService.getAccounts( ).then( function ( result ) {
+      $scope.accounts = result;
+    } );
 } ] );
