@@ -1,8 +1,8 @@
 bower_components/
 node_modules/
 .temp/
-retrieveUnpackaged/
+dist
+retrieveUnpackaged/staticresources/ngvf.resource
 .jshintrc
 build.properties
-Archive.zip
-resources/
+.DS_Store
