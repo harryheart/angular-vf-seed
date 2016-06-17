@@ -4,7 +4,8 @@
   "description": "Seed project which integrate Angularjs with Visualforce page.",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "pkg": "gulp build && ant deploy"
   },
   "repository": {
     "type": "git",
