@@ -46,14 +46,6 @@
       <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" zipFile="${sf.zipFile}" pollWaitMillis="1000" rollbackOnError="true"/>
     </target>
 
-    <target name="deploy">
-      <delete file="retrieveUnpackaged/staticresources/ngvf.resource"/>
-      <zip zipfile="retrieveUnpackaged/staticresources/ngvf.resource"
-        basedir="dist/"
-        excludes="index.html"/>
-      <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="retrieveUnpackaged" pollWaitMillis="1000" rollbackOnError="true"/>
-    </target>
-
     <!-- Shows deploying code & running tests for code in directory -->
     <target name="deployCode">
       <!-- Upload the contents of the "codepkg" directory, running the tests for just 1 class -->
@@ -93,4 +85,13 @@
     <target name="describeMetadata">
       <sf:describeMetadata username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}"/>
     </target>
+
+  <!-- Deploy a static resource for angular app to the org -->
+  <target name="deploy">
+    <delete file="retrieveUnpackaged/staticresources/ngvf.resource"/>
+    <zip zipfile="retrieveUnpackaged/staticresources/ngvf.resource"
+      basedir="dist/"
+      excludes="index.html"/>
+    <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="retrieveUnpackaged" pollWaitMillis="1000" rollbackOnError="true"/>
+  </target>
 </project>

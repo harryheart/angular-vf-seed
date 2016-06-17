@@ -6,6 +6,8 @@ Develop angular app in local environment and then deploy it as static resource.
 2. npm
 
 # Commands:
-1. gulp serve
-2. gulp build
-3. ant deploy
+1. Local development
+  * gulp serve
+2. Deploy to SF
+  * gulp build
+  * ant deploy
