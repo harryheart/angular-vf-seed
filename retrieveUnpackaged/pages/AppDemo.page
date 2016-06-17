@@ -1,12 +1,12 @@
 <apex:page showHeader="false" controller="AppDemoController">
-  <!-- Begin Default Content REMOVE THIS -->
-  <apex:stylesheet value="{!URLFOR($Resource.SLDS103, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+  <!-- Begin Default Content REMOVE THIS
+  <apex:stylesheet value="{!URLFOR($Resource.SLDS103, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />-->
   <apex:includeScript value="{!URLFOR($Resource.ngvf, 'js/angular.min.js')}" />
   <apex:includeScript value="{!URLFOR($Resource.ngvf, 'js/angular-touch.min.js')}" />
   <apex:includeScript value="{!URLFOR($Resource.ngvf, 'js/angular-animate.min.js')}" />
   <apex:includeScript value="{!URLFOR($Resource.ngvf, 'js/angular-ui-router.min.js')}" />
   <script type="text/javascript">
-    var config = config || {
+    window.config = {
       templateBase: '{!URLFOR($Resource.ngvf, "/")}',
       baseURL: '{!URLFOR($Resource.ngvf, "/")}'
     };
@@ -22,7 +22,15 @@
         { escape: false }
       );
     }
-
+    
+    function getAccount ( callback, param ) {
+      Visualforce.remoting.Manager.invokeAction( '{!$RemoteAction.AppDemoController.getAccount}',
+        param,
+        callback,
+        { escape: false }
+      );
+    }
+    
     app.factory( 'DataService', [
       '$q', '$http', '$rootScope',
       function ( $q, $http, $rootScope ) {
@@ -37,11 +45,16 @@
         };
 
         var getAccs = function ( ) {
-          return callAction( getAccounts )
+          return callAction( getAccounts );
+        }
+        
+        var getAcc = function ( accId ) {
+          return callAction( getAccount, accId);
         }
 
         return {
-          getAccounts: getAccs
+          getAccounts: getAccs,
+          getAccount: getAcc
         };
     } ] );
   </script>
