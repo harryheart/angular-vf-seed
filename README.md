@@ -6,9 +6,9 @@
 2. npm
 
 # Commands:
-1. Local development
+1. Local development:
   * npm install
   * gulp serve
-2. Deploy to SF
+2. Deploy to SF:
   * gulp build
   * ant deploy
