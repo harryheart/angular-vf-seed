@@ -5,3 +5,4 @@ dist/
 .temp/
 retrieveUnpackaged/staticresources/
 .jshintrc
+build.properties
