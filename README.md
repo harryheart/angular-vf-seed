@@ -9,7 +9,6 @@
 1. Local development:
   * set SF crendential in build.properties file.
   * npm install
-  * gulp serve, local server is running at http://localhost:9000 
+  * gulp serve, local server is running at http://localhost:9000
 2. Deploy to SF:
-  * gulp build
-  * ant deploy
+  * npm run publish
