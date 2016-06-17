@@ -7,7 +7,6 @@ app.factory( 'DataService', [
   var getAccounts = function ( ) {
     var deferred = $q.defer();
     $http.get( 'data/accounts.json' ).then( function ( res ) {
-      console.log(res);
       deferred.resolve( res.data.records );
     } );
 
@@ -18,8 +17,8 @@ app.factory( 'DataService', [
     var deferred = $q.defer();
     $http.get( 'data/accounts.json' ).then( function ( res ) {
       var accounts = res.data.records;
-      for ( account of accounts ) {
-        if ( account.id === id ) {
+      for ( var account of accounts ) {
+        if ( account.Id === id ) {
           deferred.resolve( account );
           break;
         }

@@ -6,11 +6,9 @@ var app = app || angular.module( 'app', [
   'ngTouch'
 ] );
 
-config = config || {
+var config = window.config || {
   templateBase: '',
   baseURL: ''
 };
 
 app.value('appConfig', config );
-
-console.log(config);

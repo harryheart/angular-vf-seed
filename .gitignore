@@ -6,3 +6,5 @@ retrieveUnpackaged/
 build.properties
 Archive.zip
 resources/
+app/vendor/
+dist/

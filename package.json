@@ -20,6 +20,13 @@
     "url": "https://github.com/harryheart/angular-vf-seed/issues"
   },
   "homepage": "https://github.com/harryheart/angular-vf-seed#readme",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-ui-router": "^0.3.1",
+    "angular-animate": "1.5.6",
+    "angular-touch": "1.5.6",
+    "jquery": "2.2.4"
+  },
   "devDependencies": {
     "del": "^2.2.0",
     "gulp": "^3.9.1",

@@ -18,38 +18,11 @@ var argv = require( 'yargs' ).argv,
   package = require( './package.json' ),
   Server = require( 'karma' ).Server;
 
-var Moblor = function ( paths ) {
-  var self = this;
-  self.exist = false;
-  self.resolvedPath = '';
-  paths = paths || [];
-  var resolvedPaths = [];
-  paths.forEach( function ( localPath ) {
-    var resolved = path.resolve( localPath );
-    resolvedPaths.push( resolved );
-    if ( !self.exist && fs.existsSync( resolved ) ) {
-      self.exist = true;
-      self.resolvedPath = resolved;
-    }
-  } );
-
-  self.required = argv._[ 0 ].indexOf( ':moblor' ) > 0;
-  if ( !self.exist && self.required ) {
-    gutil.log( chalk.yellow( 'Warning: can not find Moblor UI in', '[ ' + resolvedPaths.join( ', ' ) + ' ]' ) );
-  }
-};
-
 var config = {
   src: 'app',
   dist: 'dist',
   temp: '.temp'
 };
-
-var moblor = new Moblor( [
-  '../moblor-ui',
-  '../moblor-library',
-  /* Add local path here contains the Moblor UI library */
-] );
 
 var building = argv._[ 0 ].indexOf( 'build' ) === 0;
 var dest = building ? config.dist : config.temp;
@@ -81,7 +54,7 @@ gulp.task( 'scripts', function () {
     .pipe( jshint( '.jshintrc' ) )
     .pipe( jshint.reporter( stylish ) )
     .pipe( concat( 'main.js' ) )
-    .pipe( gulpif( building, uglify() ) )
+    //.pipe( gulpif( building, uglify() ) )
     .pipe( gulp.dest( dest + '/js' ) );
 } );
 
@@ -122,12 +95,6 @@ gulp.task( 'vendor', function () {
     .pipe( gulp.dest( dest + '/' ) );
 } );
 
-// Touch Point
-gulp.task( 'touchpoint-images', function () {
-  gulp.src( config.src + '/touchpoint images/*.*' )
-    .pipe( gulp.dest( dest + '/touchpoint images' ) );
-} );
-
 // Watch
 gulp.task( 'watch', function () {
   gulp.watch( config.src + '/data/**/*.json',         [ 'json' ] );
@@ -156,44 +123,13 @@ gulp.task( 'connect', function () {
   } );
 } );
 
-// Mobor tasks
-gulp.task( 'moblor-styles', function () {
-  sass( config.moblor + '/sass/moblor.scss', {
-      style: 'expanded'
-    } )
-    .pipe( autoprefixer( 'last 2 version' ) )
-    .pipe( gulpif( building, minifycss() ) )
-    .pipe( gulp.dest( config.src + '/vendor/css' ) )
-    .pipe( gulp.dest( dest + '/css' ) );
-} );
-
-gulp.task( 'moblor-scripts', function () {
-  gulp.src( config.moblor + '/js/**/*.js' )
-    .pipe( jshint( '.jshintrc' ) )
-    .pipe( jshint.reporter( stylish ) )
-    .pipe( concat( 'moblor.js' ) )
-    .pipe( gulpif( building, uglify() ) )
-    .pipe( gulp.dest( config.src + '/vendor/js' ) )
-    .pipe( gulp.dest( dest + '/js' ) );
-} );
-
-gulp.task( 'moblor-fonts', function () {
-  gulp.src( config.moblor + '/fonts/**' )
-    .pipe( gulp.dest( config.src + '/vendor/fonts' ) )
-    .pipe( gulp.dest( dest + '/fonts' ) );
-} );
-
-gulp.task( 'moblor', [ 'moblor-styles', 'moblor-scripts', 'moblor-fonts' ] );
-
-gulp.task( 'default', [ 'styles', 'images', 'scripts', 'json', 'html', 'touchpoint-images', 'vendor' ] );
+gulp.task( 'default', [ 'styles', 'images', 'scripts', 'json', 'html', 'vendor' ] );
 
 // Serve
 gulp.task( 'serve', [ 'livereload', 'clean', 'default', 'connect', 'watch' ] );
-gulp.task( 'serve:moblor', [ 'moblor', 'serve' ] );
 
 // Build
-gulp.task( 'build', [ 'clean', 'default' ] );
-gulp.task( 'build:moblor', [ 'moblor', 'build' ] );
+gulp.task( 'build', [ 'clean', 'scripts', 'html', 'vendor' ] );
 
 //Test
 gulp.task( 'test', function ( done ) {
