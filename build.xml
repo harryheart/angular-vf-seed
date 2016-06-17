@@ -47,11 +47,11 @@
     </target>
 
     <target name="deploy">
-      <delete file="resources/staticresources/ngvf.resource"/>
-      <zip zipfile="resources/staticresources/ngvf.resource"
+      <delete file="retrieveUnpackaged/staticresources/ngvf.resource"/>
+      <zip zipfile="retrieveUnpackaged/staticresources/ngvf.resource"
         basedir="dist/"
         excludes="index.html"/>
-      <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="resources" pollWaitMillis="1000" rollbackOnError="true"/>
+      <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="retrieveUnpackaged" pollWaitMillis="1000" rollbackOnError="true"/>
     </target>
 
     <!-- Shows deploying code & running tests for code in directory -->

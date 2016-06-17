@@ -3,6 +3,6 @@ resources/
 app/vendor/
 dist/
 .temp/
-retrieveUnpackaged/
+retrieveUnpackaged/staticresources/
 .jshintrc
 build.properties
