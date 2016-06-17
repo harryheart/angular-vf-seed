@@ -9,7 +9,7 @@
         <name>ApexPage</name>
     </types>
     <types>
-        <members>ngvff</members>
+        <members>ngvf</members>
         <name>StaticResource</name>
     </types>
     <version>31.0</version>

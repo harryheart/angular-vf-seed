@@ -1,10 +1,8 @@
-bower_components/
 node_modules/
+resources/
+app/vendor/
+dist/
 .temp/
 retrieveUnpackaged/
 .jshintrc
 build.properties
-Archive.zip
-resources/
-app/vendor/
-dist/
