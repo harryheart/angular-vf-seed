@@ -1,4 +1,4 @@
-# angular vf seed project.
+# Angular VF template project.
 *Develop angular app in local environment and then deploy it as static resource.*
 
 # Prerequests:
@@ -7,8 +7,9 @@
 
 # Commands:
 1. Local development:
+  * set SF crendential in build.properties file.
   * npm install
-  * gulp serve
+  * gulp serve, local server is running at http://localhost:9000 
 2. Deploy to SF:
   * gulp build
   * ant deploy
