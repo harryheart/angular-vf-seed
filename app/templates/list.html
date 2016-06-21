@@ -1,6 +1,6 @@
-<ul class="slds-list--dotted">
-  <li class="slds-item" ng-repeat="acc in accounts">
-    <a class="slds-tabs--scoped__link" ui-sref="home.details({id: acc.Id})" role="tab" aria-selected="true" >
+<ul>
+  <li ng-repeat="acc in accounts">
+    <a ui-sref="home.details({id: acc.Id})" >
       {{acc.Name}}
     </a>
   </li>

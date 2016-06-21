@@ -1,26 +1,8 @@
-<div class="slds-card slds-card--narrow">
-  <div class="slds-card__header slds-grid">
-    <div class="slds-media slds-media--center slds-has-flexi-truncate">
-      <div class="slds-media__figure">
-        <svg aria-hidden="true" class="slds-icon slds-icon-standard-account slds-icon--small">
-          <use xlink:href="" ng-attr-xlink:href="{{baseURL + '/icons/standard-sprite/svg/symbols.svg#account'}}"></use>
-        </svg>
-      </div>
-      <div class="slds-media__body slds-truncate">
-        <a href="javascript:void(0);" class="slds-text-link--reset">
-          <span class="slds-text-heading--small">Card Header</span>
-        </a>
-      </div>
-    </div>
-    <div class="slds-no-flex">
-      <button class="slds-button slds-button--icon-border-filled slds-button--icon-x-small">
-        <svg aria-hidden="true" class="slds-button__icon">
-          <use xlink:href="/icons/utility-sprite/svg/symbols.svg#down"></use>
-        </svg>
-        <span class="slds-assistive-text">More Options</span>
-      </button>
-    </div>
-  </div>
-  <div class="slds-card__body slds-text-align--center">Card Body (custom goes in here)</div>
-  <div class="slds-card__footer">Card Footer</div>
+<a ui-sref="home.list" >
+  Back
+</a>
+<div class="">
+  <vf-svg base-url="config.baseURL" url="'/icons/standard-sprite/svg/symbols.svg#contact'"></vf-svg>
+  <label for="name">Name</label>
+  <p id="name" ng-bind="account.Name"></p>
 </div>

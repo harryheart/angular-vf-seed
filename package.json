@@ -4,7 +4,8 @@
   "description": "Seed project which integrate Angularjs with Visualforce page.",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "publish": "gulp build && ant deploy"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,14 @@
     "url": "https://github.com/harryheart/angular-vf-seed/issues"
   },
   "homepage": "https://github.com/harryheart/angular-vf-seed#readme",
+  "dependencies": {
+    "@salesforce-ux/design-system": "^2.0.2",
+    "angular": "^1.5.6",
+    "angular-animate": "1.5.6",
+    "angular-touch": "1.5.6",
+    "angular-ui-router": "^0.3.1",
+    "jquery": "2.2.4"
+  },
   "devDependencies": {
     "del": "^2.2.0",
     "gulp": "^3.9.1",
@@ -33,7 +42,6 @@
     "gulp-livereload": "^3.8.1",
     "gulp-ruby-sass": "^2.0.6",
     "gulp-uglify": "^1.5.3",
-
     "angular-mocks": "^1.5.5",
     "chalk": "latest",
     "jasmine-core": "^2.4.1",

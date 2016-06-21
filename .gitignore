@@ -1,8 +1,11 @@
-bower_components/
 node_modules/
+resources/
+app/vendor/
+dist/
 .temp/
-dist
+dist/
 retrieveUnpackaged/staticresources/ngvf.resource
 .jshintrc
 build.properties
 .DS_Store
+npm-debug.log

@@ -4,16 +4,28 @@
     <meta charset="UTF-8">
     <title>Demo App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <link rel="stylesheet" type="text/css" href="css/salesforce-lightning-design-system.css">
+    <link rel="stylesheet" type="text/css" href="styles/salesforce-lightning-design-system.css">
     <!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
     <script src="js/angular.min.js"></script>
     <script src="js/angular-animate.min.js"></script>
     <script src="js/angular-ui-router.min.js"></script>
     <script src="js/angular-touch.min.js"></script>
     <script src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+    var config = {
+      templateBase: '',
+      baseURL: ''
+    };
+    var app = app || angular.module( 'app', [
+      'ngAnimate',
+      'ui.router',
+      'ngTouch'
+    ] );
+    app.constant('sfCfg', config );
+    </script>
     <script src="js/main.js"></script>
   </head>
   <body>
-    <div ui-view class="slds"></div>
+    <div ui-view></div>
   </body>
 </html>
