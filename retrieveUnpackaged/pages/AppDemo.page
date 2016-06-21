@@ -6,10 +6,16 @@
   <apex:includeScript value="{!URLFOR($Resource.ngvf, 'js/angular-animate.min.js')}" />
   <apex:includeScript value="{!URLFOR($Resource.ngvf, 'js/angular-ui-router.min.js')}" />
   <script type="text/javascript">
-    window.config = {
+    var config = {
       templateBase: '{!URLFOR($Resource.ngvf, "/")}',
       baseURL: '{!URLFOR($Resource.ngvf, "/")}'
     };
+    var app = app || angular.module( 'app', [
+      'ngAnimate',
+      'ui.router',
+      'ngTouch'
+    ] );
+    app.value('sfCfg', config );
   </script>
   <apex:includeScript value="{!URLFOR($Resource.ngvf, 'js/main.js')}" />
   <div ng-app="app">
@@ -22,7 +28,7 @@
         { escape: false }
       );
     }
-    
+
     function getAccount ( callback, param ) {
       Visualforce.remoting.Manager.invokeAction( '{!$RemoteAction.AppDemoController.getAccount}',
         param,
@@ -30,7 +36,7 @@
         { escape: false }
       );
     }
-    
+
     app.factory( 'DataService', [
       '$q', '$http', '$rootScope',
       function ( $q, $http, $rootScope ) {
@@ -47,7 +53,7 @@
         var getAccs = function ( ) {
           return callAction( getAccounts );
         }
-        
+
         var getAcc = function ( accId ) {
           return callAction( getAccount, accId);
         }

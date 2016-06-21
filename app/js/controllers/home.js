@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller( 'HomeCtrl', [
-  '$scope', 'appConfig',
-  function ( $scope, appConfig ) {
-    // $scope.baseURL = appConfig.baseURL;
+  '$scope', 'sfCfg',
+  function ( $scope, sfCfg ) {
+    console.log(JSON.stringify(sfCfg));
 } ] );

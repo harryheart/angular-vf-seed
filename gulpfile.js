@@ -102,11 +102,6 @@ gulp.task( 'watch', function () {
   gulp.watch( config.src + '/sass/**/*.scss',         [ 'styles' ] );
   gulp.watch( config.src + '/**/*.html',              [ 'html' ] );
 
-  if ( moblor.required && moblor.exist ) {
-    gulp.watch( config.moblor + '/js/**/*.js',        [ 'moblor-scripts' ] );
-    gulp.watch( config.moblor + '/sass/**/*.scss',    [ 'moblor-styles' ] );
-    gulp.watch( config.moblor + '/fonts/**',          [ 'moblor-fonts' ] );
-  }
 } );
 
 gulp.task( 'livereload', function () {

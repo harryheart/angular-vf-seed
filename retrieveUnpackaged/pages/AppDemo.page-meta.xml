@@ -5,6 +5,11 @@
     <confirmationTokenRequired>false</confirmationTokenRequired>
     <label>AppDemo</label>
     <packageVersions>
+        <majorNumber>8</majorNumber>
+        <minorNumber>9</minorNumber>
+        <namespace>APXTConga4</namespace>
+    </packageVersions>
+    <packageVersions>
         <majorNumber>1</majorNumber>
         <minorNumber>11</minorNumber>
         <namespace>sf_chttr_apps</namespace>

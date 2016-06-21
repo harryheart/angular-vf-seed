@@ -10,6 +10,18 @@
     <script src="js/angular-ui-router.min.js"></script>
     <script src="js/angular-touch.min.js"></script>
     <script src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+    var config = {
+      templateBase: '',
+      baseURL: ''
+    };
+    var app = app || angular.module( 'app', [
+      'ngAnimate',
+      'ui.router',
+      'ngTouch'
+    ] );
+    app.value('sfCfg', config );
+    </script>
     <script src="js/main.js"></script>
   </head>
   <body>
