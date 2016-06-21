@@ -6,3 +6,4 @@ dist/
 retrieveUnpackaged/staticresources/
 .jshintrc
 build.properties
+npm-debug.log
