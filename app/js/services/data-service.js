@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory( 'DataService', [
+var dataService = dataService || app.factory( 'DataService', [
   '$q', '$http',
   function ( $q, $http ) {
 

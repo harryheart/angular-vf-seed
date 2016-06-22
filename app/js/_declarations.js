@@ -5,3 +5,5 @@ var app = app || angular.module( 'app', [
   'ui.router',
   'ngTouch'
 ] );
+console.log('{!$Organization.Id}');
+console.log('main block.');

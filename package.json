@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npm test",
-    "publish": "gulp build && ant deploy"
+    "publish": "gulp build && ant deploy",
+    "fetch": "ant retrieveUnpackaged"
   },
   "repository": {
     "type": "git",

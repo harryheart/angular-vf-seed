@@ -29,6 +29,7 @@ var dest = building ? config.dist : config.temp;
 
 // Clean
 gulp.task( 'clean', function () {
+  console.log(dest);
   del.sync( [ dest ] );
 } );
 
